@@ -2,17 +2,6 @@
 
 Este proyecto es un Sistema Integral de Gestión para un Centro de Formación y Cursos (SICFOR), desarrollado con Node.js, Express y MySQL.
 
-## 🚀 Inicio Rápido
-
-Para iniciar el proyecto (Backend + Base de Datos), ejecuta:
-
-```bash
-npm run dev
-```
-
-Esto iniciará el servidor en [http://localhost:8080](http://localhost:8080).
-
----
 
 ## ⚙️ Configuración de Base de Datos
 
@@ -43,21 +32,3 @@ DB_PORT=3306
 PORT=8080
 NODE_ENV=development
 ```
-
----
-
-## 📂 Estructura del Proyecto
-
-- **`server.js`**: Punto de entrada del servidor Express.
-- **`start_all.js`**: Script de arranque unificado.
-- **`config/db.js`**: Configuración de la conexión a MySQL.
-- **`controllers/`**: Lógica de negocio y controladores.
-- **`routes/`**: Definición de rutas de la API.
-- **`public/`**: Archivos estáticos del Frontend (HTML, CSS, JS).
-- **`scripts/`**: Scripts de utilidad (inicialización de DB, SQL manual).
-
-## 🛠️ Scripts Disponibles
-
-- `npm start`: Inicia solo el servidor backend.
-- `npm run db:init`: Ejecuta el script de inicialización de base de datos (crear tablas/datos).
-- `npm run dev`: Ejecuta la inicialización de DB y luego levanta el servidor (Recomendado).
