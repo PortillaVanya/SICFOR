@@ -93,19 +93,40 @@
     body{margin:0;background:var(--bg);color:#111;}
 
     .container{
-      max-width:1100px;margin:28px auto;padding:18px;display:grid;grid-template-columns:220px 1fr 300px;gap:18px;
+      width:100%;
+      max-width:none;
+      margin:0;
+      padding:18px;
+      display:grid;
+      grid-template-columns:260px 1fr;
+      grid-template-rows:auto 1fr;
+      gap:18px;
+      height:100vh;
     }
 
     header.full{
-      grid-column:1/4;background:var(--card);padding:16px;border-radius:8px;border:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;width: 1050px; 
+      grid-column:1 / -1;
+      background:var(--card);
+      padding:16px;
+      border-radius:8px;
+      border:1px solid var(--border);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      margin-bottom:6px;
     }
+    .header-left{display:flex;align-items:center;gap:16px}
+    .header-right{display:flex;align-items:center}
+    .profile-inline{display:flex;align-items:center;gap:12px}
     header .title{font-weight:800;letter-spacing:1px}
     header .controls{display:flex;gap:12px;align-items:center}
     .search{display:flex;align-items:center;background:#fafbff;border:1px solid var(--border);padding:6px 10px;border-radius:6px}
     .search input{border:0;background:transparent;outline:none;width:220px}
+    .header-left .title{font-weight:800;letter-spacing:1px}
+    .header-left .search{margin-left:12px}
 
     /* SIDEBAR */
-    .sidebar{background:var(--card);padding:12px;border-radius:8px;border:1px solid var(--border);height:640px;display:flex;flex-direction:column}
+    .sidebar{background:var(--card);padding:12px;border-radius:8px;border:1px solid var(--border);display:flex;flex-direction:column;min-height:0}
     .sidebar h3{margin:4px 0 10px;font-size:14px;color:var(--muted)}
     .course-list{flex:1;overflow:auto;padding-right:6px}
     .course-item{padding:10px;border-radius:6px;margin-bottom:8px;border:1px dashed transparent;cursor:pointer}
@@ -114,7 +135,7 @@
     .pager{display:flex;justify-content:center;gap:6px;padding-top:8px;color:var(--muted)}
 
     /* MAIN */
-    .main{background:var(--card);padding:16px;border-radius:8px;border:1px solid var(--border);width:800px ;height:640px;display:flex;flex-direction:column}
+    .main{background:var(--card);padding:16px;border-radius:8px;border:1px solid var(--border);display:flex;flex-direction:column;min-height:0}
     .profile{display:flex;align-items:center;gap:12px;margin-bottom:8px}
     .avatar{width:64px;height:64px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#7bb1f8);display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
     .meta{font-size:13px}
@@ -144,18 +165,21 @@
 
   <div class="container">
     <header class="full">
-      <div class="title">SICFOR - catálogo de cursos</div>
-      <div class="controls">
+      <div class="header-left">
+        <div class="title">SICFOR - catálogo de cursos</div>
         <div class="search">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 21l-4.35-4.35" stroke="#9AA7C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="11" cy="11" r="6" stroke="#9AA7C7" stroke-width="2"/></svg>
           <input id="search" placeholder="Buscar..." />
         </div>
-        <div class="avatar">AD</div>
-        <div class="meta">
-          <div class="name"></div>
-          <div style="font-size:13px;color:var(--muted)">Rol: Administrador</div>
+      </div>
+      <div class="header-right">
+        <div class="profile-inline">
+          <div class="avatar">AD</div>
+          <div class="meta">
+            <div class="name">Administrador</div>
+            <div style="font-size:13px;color:var(--muted)">Rol: <strong>Admin / Profesor</strong></div>
+          </div>
         </div>
-        <div style="font-size:13px;color:var(--muted)"><strong>Admin / Profesor</strong></div>
       </div>
     </header>
 
