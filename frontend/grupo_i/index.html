@@ -1,0 +1,80 @@
+<!-- File: index.html -->
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SICFOR · Grupo I — Generar Certificado</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>SICFOR — Módulo de Certificaciones (Grupo I)</h1>
+    <nav class="nav">
+      <a href="index.html" aria-current="page">Generar</a>
+      <a href="certificados.html">Historial</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <h2>Generar certificado</h2>
+
+      <form id="form-generate" class="form">
+        <label>
+          Nombre del beneficiario
+          <input id="input-name" name="name" type="text" required placeholder="Ej: María Pérez" />
+        </label>
+
+        <label>
+          Título del certificado
+          <input id="input-title" name="title" type="text" required value="Certificado de Participación" />
+        </label>
+
+        <label>
+          Entidad emisora
+          <input id="input-issuer" name="issuer" type="text" required value="Centro de Formación SICFOR" />
+        </label>
+
+        <label>
+          Fecha de emisión
+          <input id="input-date" name="date" type="date" required />
+        </label>
+
+        <label>
+          Observación / Nota
+          <textarea id="input-note" name="note" rows="3">Se reconoce la participación destacada en las actividades formativas.</textarea>
+        </label>
+
+        <div class="form-actions">
+          <button type="submit" class="btn-primary">Generar y Guardar</button>
+          <button type="button" id="btn-preview" class="btn-outline">Vista previa</button>
+          <button type="button" id="btn-clear" class="btn-ghost">Limpiar</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="panel preview-panel" aria-live="polite">
+      <h2>Vista previa / Descargar</h2>
+
+      <div class="preview-area">
+        <!-- Canvas certificate will be drawn here -->
+        <canvas id="certificate-canvas" width="1200" height="675" role="img" aria-label="Previsualización del certificado"></canvas>
+      </div>
+
+      <div class="preview-actions">
+        <button id="btn-download" class="btn-primary" disabled>Descargar PNG</button>
+        <button id="btn-copy-json" class="btn-outline" disabled>Copiar JSON</button>
+      </div>
+
+      <div id="msg" class="message" aria-hidden="true"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>Modulo: Certificaciones · Grupo I — SICFOR (mockup local, sin backend)</small>
+  </footer>
+
+  <script type="module" src="certificaciones.js"></script>
+</body>
+</html>

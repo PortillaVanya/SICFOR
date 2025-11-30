@@ -1,0 +1,47 @@
+<!-- File: certificados.html -->
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SICFOR · Grupo I — Historial de Certificados</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>SICFOR — Historial de Certificados (Grupo I)</h1>
+    <nav class="nav">
+      <a href="index.html">Generar</a>
+      <a href="certificados.html" aria-current="page">Historial</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <h2>Buscador / Verificación rápida</h2>
+      <div class="search-row">
+        <input id="search-code" type="text" placeholder="Buscar por código de verificación..." />
+        <button id="btn-search" class="btn-primary">Buscar</button>
+        <button id="btn-clear-search" class="btn-ghost">Limpiar</button>
+      </div>
+      <p id="search-result" class="small muted"></p>
+    </section>
+
+    <section class="panel">
+      <h2>Historial (localStorage)</h2>
+      <div class="history-actions">
+        <button id="btn-export-json" class="btn-outline">Exportar JSON</button>
+        <button id="btn-clear-history" class="btn-ghost">Borrar historial</button>
+      </div>
+
+      <div id="history-list" class="history-list" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>Modulo: Certificaciones · Grupo I — SICFOR</small>
+  </footer>
+
+  <script type="module" src="certificaciones.js"></script>
+</body>
+</html>
